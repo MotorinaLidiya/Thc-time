@@ -1,3 +1,8 @@
-require_relative 'time_app'
+require_relative 'app'
+require_relative 'format_time'
 
-run TimeApp.new
+ROUTES = {
+  '/time' => App.new
+}
+
+run Rack::URLMap.new(ROUTES)
